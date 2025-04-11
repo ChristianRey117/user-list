@@ -18,7 +18,7 @@ export default function UserList() {
       });
   };
   return (
-    <>
+    <Grid container spacing={2} rowSpacing={2}>
       {users.map((user) => {
         return (
           <Grid key={user.id} size={4} spacing={2}>
@@ -26,6 +26,6 @@ export default function UserList() {
           </Grid>
         );
       })}
-    </>
+    </Grid>
   );
 }
