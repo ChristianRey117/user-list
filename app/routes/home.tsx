@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import UserList from "~/components/user-list/user-list";
+import { Grid } from "node_modules/@mui/material";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +10,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <Grid container spacing={2}>
+      <UserList></UserList>
+    </Grid>
+  );
 }
