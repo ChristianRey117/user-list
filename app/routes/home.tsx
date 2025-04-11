@@ -3,6 +3,7 @@ import UserList from "~/components/user-list/user-list";
 import { Grid } from "node_modules/@mui/material";
 import Search from "~/components/search/search";
 import { useState } from "react";
+import { Link } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -15,9 +16,14 @@ export default function Home() {
   const [search, setSearch] = useState(null);
   return (
     <Grid container spacing={2} rowSpacing={2}>
-      <Grid size={12} padding={"2rem"}>
+      <Grid size={3} padding={"2rem"}>
         <h2>Create a list component</h2>
       </Grid>
+
+      <Grid offset={6} size={3} padding={"2rem"}>
+        <Link to="/redux"> Go to Redux Result</Link>
+      </Grid>
+
       <Grid size={12} padding={"2rem"}>
         <Search
           onChange={(value: any) => {
