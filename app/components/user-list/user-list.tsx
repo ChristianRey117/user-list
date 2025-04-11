@@ -23,7 +23,11 @@ export default function UserList({ searching }: any) {
         if (searching) {
           if (user.name.toUpperCase().indexOf(searching.toUpperCase()) > -1) {
             return (
-              <Grid key={user.id} size={4} spacing={2}>
+              <Grid
+                key={user.id}
+                size={{ xs: 12, sm: 6, md: 6, lg: 4 }}
+                spacing={2}
+              >
                 <User email={user.email} id={user.id} name={user.name}></User>
               </Grid>
             );
@@ -31,7 +35,11 @@ export default function UserList({ searching }: any) {
           return;
         }
         return (
-          <Grid key={user.id} size={4} spacing={2}>
+          <Grid
+            key={user.id}
+            size={{ xs: 12, sm: 12, md: 6, lg: 4, xl: 3 }}
+            spacing={2}
+          >
             <User email={user.email} id={user.id} name={user.name}></User>
           </Grid>
         );
