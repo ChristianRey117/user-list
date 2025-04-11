@@ -3,7 +3,7 @@ import User from "../user/user";
 import type { IUser } from "../user/IUser";
 import { Grid } from "@mui/material";
 
-export default function UserList() {
+export default function UserList({ searching }: any) {
   const [users, setUsers] = useState<IUser[]>([]);
 
   useEffect(() => {
@@ -20,6 +20,16 @@ export default function UserList() {
   return (
     <Grid container spacing={2} rowSpacing={2}>
       {users.map((user) => {
+        if (searching) {
+          if (user.name.toUpperCase().indexOf(searching.toUpperCase()) > -1) {
+            return (
+              <Grid key={user.id} size={4} spacing={2}>
+                <User email={user.email} id={user.id} name={user.name}></User>
+              </Grid>
+            );
+          }
+          return;
+        }
         return (
           <Grid key={user.id} size={4} spacing={2}>
             <User email={user.email} id={user.id} name={user.name}></User>
