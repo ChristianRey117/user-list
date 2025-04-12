@@ -85,3 +85,8 @@ This template comes with [Tailwind CSS](https://tailwindcss.com/) already config
 ---
 
 Built with ❤️ using React Router.
+
+## Init aplication
+
+With command npm run dev you can init proyect and json-server for mock data
+The part of redux is in route /redux
